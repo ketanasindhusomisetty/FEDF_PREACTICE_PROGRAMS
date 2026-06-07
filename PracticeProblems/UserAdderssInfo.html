@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Address Details</title>
+</head>
+<body>
+
+<h2>User Address Information</h2>
+
+<button onclick="showAddress()">Show Address</button>
+
+<p id="output"></p>
+
+<script>
+
+  // STEP 1: Create object with nested address
+  const user = {
+    name: "Ketana",
+    address: {
+      city: "Hyderabad",
+      state: "Telangana",
+      pincode: 500001
+    }
+  };
+
+  // STEP 2: Function to display address
+  const showAddress = () => {
+
+    // STEP 3: Nested destructuring
+    const { name, address: { city, state, pincode } } = user;
+
+    // STEP 4: Display using template literals
+    document.getElementById("output").innerHTML =
+      `Name: ${name} <br>
+       City: ${city} <br>
+       State: ${state} <br>
+       Pincode: ${pincode}`;
+  };
+
+</script>
+
+</body>
+</html>

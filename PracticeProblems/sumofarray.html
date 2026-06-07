@@ -1,0 +1,26 @@
+<!--write the javascript func to calculate sum of all the elements in an array using a loop-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sum of Array</title>
+</head>
+<body>
+
+<h2>Sum of Array</h2>
+<p id="output"></p>
+
+<script>
+function sumArray(arr) {
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        sum += arr[i];
+    }
+    return sum;
+}
+
+document.getElementById("output").innerHTML = sumArray([10, 20, 30, 40]);
+</script>
+
+</body>
+</html>

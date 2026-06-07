@@ -1,0 +1,34 @@
+<!--write the javascript func to display object keys and value pairs using javascript object-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Object Display</title>
+</head>
+<body>
+
+<h2>Object Keys and Values</h2>
+<p id="output"></p>
+
+<script>
+function displayObject(obj) {
+    let result = "";
+
+    for (let key in obj) {
+        result += key + " : " + obj[key] + "<br>";
+    }
+
+    return result;
+}
+
+let student = {
+    name: "Ketana Sindhu",
+    age: 18,
+    course: "B.Tech"
+};
+
+document.getElementById("output").innerHTML = displayObject(student);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Shopping Cart (Spread & Rest)</title>
+</head>
+<body>
+
+<h2>Shopping Cart System</h2>
+
+<button onclick="loadCart()">Load Cart</button>
+
+<div id="output"></div>
+
+<script>
+
+  // STEP 1: Two different carts
+  const cart1 = [
+    { name: "Laptop", price: 50000 },
+    { name: "Mouse", price: 500 }
+  ];
+
+  const cart2 = [
+    { name: "Keyboard", price: 1500 },
+    { name: "Headphones", price: 2000 }
+  ];
+
+  // STEP 2: Function using REST operator to calculate total
+  const calculateTotal = (...items) => {
+    return items.reduce((sum, item) => sum + item.price, 0);
+  };
+
+  // STEP 3: Function to display cart
+  const loadCart = () => {
+
+    // STEP 4: Use SPREAD operator to merge carts
+    const allProducts = [...cart1, ...cart2];
+
+    let result = "";
+
+    // Display products
+    allProducts.forEach(({ name, price }) => {
+      result += `<p>Product: ${name}, Price: ${price}</p>`;
+    });
+
+    // STEP 5: Pass items using spread into rest function
+    const total = calculateTotal(...allProducts);
+
+    result += `<h3>Total Price: ${total}</h3>`;
+
+    document.getElementById("output").innerHTML = result;
+  };
+
+</script>
+
+</body>
+</html>

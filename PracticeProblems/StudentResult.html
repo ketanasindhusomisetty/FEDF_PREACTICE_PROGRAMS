@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Result Processing</title>
+</head>
+<body>
+
+<h2>Student Result Processing System</h2>
+
+<button onclick="showResults()">Show Results</button>
+
+<div id="output"></div>
+
+<script>
+
+// STEP 1: Create Student class
+class Student {
+  constructor(name, sem1Marks, sem2Marks) {
+    this.name = name;
+
+    // STEP 2: Spread operator to combine marks
+    this.marks = [...sem1Marks, ...sem2Marks];
+  }
+
+  // STEP 3: Arrow function to calculate total
+  getTotal = () => {
+    return this.marks.reduce((sum, m) => sum + m, 0);
+  };
+
+  // Arrow function to calculate average
+  getAverage = () => {
+    return this.getTotal() / this.marks.length;
+  };
+}
+
+
+// STEP 4: Function to display results
+const showResults = () => {
+
+  // Create student records
+  const student1 = new Student("Rahul", [80, 75, 90], [85, 70, 95]);
+  const student2 = new Student("Anjali", [70, 65, 80], [75, 60, 85]);
+
+  const students = [student1, student2];
+
+  let result = "";
+
+  // Loop through students
+  students.forEach(student => {
+
+    // STEP 5: Destructuring
+    const { name, marks } = student;
+
+    // STEP 6: Template literals for display
+    result += `
+      <h3>Student Details</h3>
+      <p><b>Name:</b> ${name}</p>
+      <p><b>All Marks:</b> ${marks.join(", ")}</p>
+      <p><b>Total Marks:</b> ${student.getTotal()}</p>
+      <p><b>Average Marks:</b> ${student.getAverage().toFixed(2)}</p>
+      <hr>
+    `;
+  });
+
+  document.getElementById("output").innerHTML = result;
+};
+
+</script>
+
+</body>
+</html>

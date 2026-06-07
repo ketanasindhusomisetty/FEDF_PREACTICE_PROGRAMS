@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Login Status</title>
+</head>
+<body>
+
+<h2>User Login System</h2>
+
+<!-- Buttons -->
+<button onclick="login()">Login</button>
+<button onclick="logout()">Logout</button>
+
+<!-- Display area -->
+<p id="status"></p>
+
+<script>
+
+  // STEP 1: Store login status using let
+  let isLoggedIn = false;
+
+  // STEP 2: Function to display status
+  const showStatus = () => {
+    document.getElementById("status").innerHTML =
+      `Login Status: ${isLoggedIn ? "Logged In ✅" : "Logged Out ❌"}`;
+  };
+
+  // STEP 3: Login function
+  const login = () => {
+    isLoggedIn = true;   // update value
+    showStatus();
+  };
+
+  // STEP 4: Logout function
+  const logout = () => {
+    isLoggedIn = false;  // update again
+    showStatus();
+  };
+
+  // STEP 5: Initial display
+  showStatus();
+
+</script>
+
+</body>
+</html>

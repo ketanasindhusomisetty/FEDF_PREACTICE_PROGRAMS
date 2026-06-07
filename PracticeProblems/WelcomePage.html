@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Welcome Message</title>
+</head>
+<body>
+
+<h2>User Login Welcome</h2>
+
+<button onclick="login()">Login</button>
+
+<p id="output"></p>
+
+<script>
+
+  // STEP 1: Arrow function to display welcome message
+  const showWelcome = (username) => {
+    document.getElementById("output").innerHTML =
+      `Welcome, ${username}! You have successfully logged in.`;
+  };
+
+  // STEP 2: Simulate login
+  const login = () => {
+    let user = "Ketana";   // you can change name
+    showWelcome(user);     // call arrow function
+  };
+
+</script>
+
+</body>
+</html>

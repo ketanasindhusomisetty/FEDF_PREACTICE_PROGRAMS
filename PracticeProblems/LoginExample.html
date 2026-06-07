@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Example</title>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+        }
+
+        .box{
+            width:400px;
+        }
+
+        h2{
+            margin-bottom:20px;
+        }
+
+        label{
+            font-size:20px;
+        }
+
+        input{
+            width:100%;
+            padding:10px;
+            margin-top:5px;
+            margin-bottom:20px;
+            font-size:18px;
+        }
+
+        button{
+            background:#198754;
+            color:white;
+            border:none;
+            padding:12px 25px;
+            font-size:22px;
+            border-radius:8px;
+            cursor:pointer;
+        }
+
+        #result{
+            margin-top:20px;
+            font-size:40px;
+            font-weight:bold;
+        }
+
+        .success{
+            color:green;
+        }
+
+        .error{
+            color:red;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+
+    <h2>Implement the Login Example</h2>
+
+    <label>User Name</label>
+    <input type="text" id="username">
+
+    <label>Password</label>
+    <input type="password" id="password">
+
+    <button onclick="login()">Login</button>
+
+    <div id="result"></div>
+
+</div>
+
+<script>
+
+function login(){
+
+    let uname = document.getElementById("username").value;
+    let pass = document.getElementById("password").value;
+
+    if(uname === "admin" && pass === "admin123"){
+        document.getElementById("result").innerHTML =
+            "Login Success";
+        document.getElementById("result").className =
+            "success";
+    }
+    else{
+        document.getElementById("result").innerHTML =
+            "Login Failed";
+        document.getElementById("result").className =
+            "error";
+    }
+}
+
+</script>
+
+</body>
+</html>

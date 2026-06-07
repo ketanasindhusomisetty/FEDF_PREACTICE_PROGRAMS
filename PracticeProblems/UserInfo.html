@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Details</title>
+</head>
+<body>
+
+<h2>User Information</h2>
+
+<button onclick="showUser()">Show User</button>
+
+<p id="output"></p>
+
+<script>
+
+  // STEP 1: Create user object
+  const user = {
+    name: "Ketana",
+    age: 19,
+    email: "ketana@gmail.com"
+  };
+
+  // STEP 2: Function to display details
+  const showUser = () => {
+
+    // STEP 3: Destructuring with renaming
+    const { name: userName, age: userAge, email: userEmail } = user;
+
+    // STEP 4: Display using template literals
+    document.getElementById("output").innerHTML =
+      `Name: ${userName} <br>
+       Age: ${userAge} <br>
+       Email: ${userEmail}`;
+  };
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Fibonacci series
+        </title>
+    </head>
+    <body>
+        <script>
+            //number of terms
+            let n = 10;
+            //first two numbers
+            let a = 0;
+            let b = 1;
+            //variables to store next term
+            let c;
+            document.write("Fibonacci Series:<br>");
+            //print first two numbers
+            document.write(a+"<br>");
+            document.write(b+"<br>");
+            //loop starts from 3rd term
+            for(let i = 3;i<=n;i++){
+                //add previous two numbers
+                c =a+b;
+                //print next number
+                document.write(c+ "<br>");
+                //update values
+                a=b;
+                b=c;
+            }
+        </script>
+    </body>
+</html>

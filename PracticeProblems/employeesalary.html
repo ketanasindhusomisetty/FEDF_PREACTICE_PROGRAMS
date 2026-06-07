@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employees > 50K</title>
+</head>
+<body>
+
+<h2>Employees with Salary > 50,000</h2>
+
+<!-- Input -->
+<input type="text" id="name" placeholder="Enter employee name">
+<input type="number" id="salary" placeholder="Enter salary">
+<button onclick="addEmployee()">Add Employee</button>
+
+<br><br>
+
+<button onclick="showHighSalary()">Show Employees</button>
+
+<p id="result"></p>
+
+<script>
+let employees = [];
+
+// Add employee
+function addEmployee() {
+    let name = document.getElementById("name").value;
+    let salary = Number(document.getElementById("salary").value);
+
+    if (name && salary) {
+        employees.push({ name: name, salary: salary });
+    }
+
+    document.getElementById("name").value = "";
+    document.getElementById("salary").value = "";
+}
+
+// Function to get names with salary > 50k
+function getHighSalaryEmployees(empList) {
+    let result = [];
+
+    for (let i = 0; i < empList.length; i++) {
+        if (empList[i].salary > 50000) {
+            result.push(empList[i].name);
+        }
+    }
+
+    return result;
+}
+
+// Display result
+function showHighSalary() {
+    let names = getHighSalaryEmployees(employees);
+
+    document.getElementById("result").innerText =
+        "Employees with salary > 50,000: " + names.join(", ");
+}
+</script>
+
+</body>
+</html>

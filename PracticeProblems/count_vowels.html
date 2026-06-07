@@ -1,0 +1,30 @@
+<!--write the javascript func to count no.of ovals in each string-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Count Vowels</title>
+</head>
+<body>
+
+<h2>Count Vowels</h2>
+<p id="output"></p>
+
+<script>
+function countVowels(str) {
+    let count = 0;
+    let vowels = "aeiouAEIOU";
+
+    for (let i = 0; i < str.length; i++) {
+        if (vowels.includes(str[i])) {
+            count++;
+        }
+    }
+    return count;
+}
+
+document.getElementById("output").innerHTML = countVowels("JavaScript");
+</script>
+
+</body>
+</html>

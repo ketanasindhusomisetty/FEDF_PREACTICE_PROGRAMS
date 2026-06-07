@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tax Calculation</title>
+</head>
+<body>
+
+<h2>Item Price with Tax</h2>
+
+<button onclick="calculate()">Calculate Total Price</button>
+
+<p id="output"></p>
+
+<script>
+
+  // STEP 1: const for fixed tax percentage
+  const TAX_RATE = 0.18;   // 18% tax (fixed)
+
+  // STEP 2: let for price (can change)
+  let price = 1000;        // initial price
+
+  // STEP 3: Function to calculate tax and total
+  const calculate = () => {
+
+    let taxAmount = price * TAX_RATE;
+    let totalPrice = price + taxAmount;
+
+    document.getElementById("output").innerHTML = `
+      Price: ${price} <br>
+      Tax (18%): ${taxAmount} <br>
+      Total Price: ${totalPrice}
+    `;
+  };
+
+</script>
+
+</body>
+</html>

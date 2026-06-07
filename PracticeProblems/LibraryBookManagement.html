@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Library Book Management</title>
+</head>
+<body>
+
+<h2>Library Book Management System</h2>
+
+<button onclick="displayBooks()">Show Book Details</button>
+
+<div id="output"></div>
+
+<script>
+
+// Create Book class
+class Book {
+  constructor(title, author, ...prices) {
+    this.title = title;
+    this.author = author;
+    this.prices = prices;
+  }
+
+  // Arrow function to calculate final price
+  getFinalPrice = () => {
+    return this.prices.reduce((total, price) => total + price, 0);
+  };
+}
+
+// Function to display books
+const displayBooks = () => {
+
+  // Create multiple book objects
+  const book1 = new Book("Harry Potter", "J.K. Rowling", 500, 50, 20);
+  const book2 = new Book("The Alchemist", "Paulo Coelho", 300, 30, 10);
+  const book3 = new Book("Wings of Fire", "A.P.J Abdul Kalam", 250, 25, 15);
+
+  const books = [book1, book2, book3];
+
+  let result = "";
+
+  // Loop through books
+  books.forEach(book => {
+
+    // Destructuring
+    const { title, author, prices } = book;
+
+    // Display using template literals
+    result += `
+      <h3>Book Details</h3>
+      <p><b>Title:</b> ${title}</p>
+      <p><b>Author:</b> ${author}</p>
+      <p><b>Prices:</b> ${prices.join(", ")}</p>
+      <p><b>Final Price:</b> ${book.getFinalPrice()}</p>
+      <hr>
+    `;
+  });
+
+  document.getElementById("output").innerHTML = result;
+};
+
+</script>
+
+</body>
+</html>

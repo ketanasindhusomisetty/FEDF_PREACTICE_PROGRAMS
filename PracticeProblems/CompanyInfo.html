@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Company Name Example</title>
+</head>
+<body>
+
+<h2>Company Information</h2>
+
+<button onclick="showCompany()">Show Company Name</button>
+
+<p id="output"></p>
+
+<script>
+
+  // STEP 1: Store company name using const
+  const companyName = "Tech Solutions Pvt Ltd";
+
+  // STEP 2: Function to display company name
+  const showCompany = () => {
+    document.getElementById("output").innerHTML =
+      `Company Name: ${companyName}`;
+  };
+
+  // STEP 3: (Important Note)
+  // companyName = "New Company"; ❌ ERROR (cannot change const)
+
+</script>
+
+</body>
+</html>
