@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h2>Real DOM Counter</h2>
+        <div id="realDom"></div>
+        <button onclick = "updateRealDOM()">Increment</button>
+
+        <h2>Virtual DOM Counter</h2>
+        <div id = "virtualDom"></div>
+        <button onclick="updateVirtualDOM()">Increment</button>
+
+        <script>
+            let realCount = 0;
+            let virtualCount = 0;
+
+            function renderRealDOM(){
+                document.getElementById("realDom").innerHTML = "<h3>Counter : "+realCount+"</h3>";
+            }
+
+            function updateRealDOM(){
+                realCount++;
+                renderRealDOM();//entire UI re-rendered
+            }
+
+            let virtualDOM = {count:0};
+
+            function renderVirtualDOM(){
+                document.getElementById("virtualDom").textContent = "Counter :"+virtualDOM.count; 
+            }
+
+            function updateVirtualDOM(){
+                virtualDOM.count++;
+                renderVirtualDOM();//only changed element updated
+            }
+
+            renderRealDOM();
+            renderVirtualDOM();
+            </script>
+
+    </body>
+</html>
